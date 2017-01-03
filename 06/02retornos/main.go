@@ -14,10 +14,18 @@ func main() {
 		fmt.Println(result)
 	*/
 
-	var edad uint8
-	edad = 30
+	/*
+		var edad uint8
+		edad = 30
 
-	fmt.Println(tipoEdad(edad))
+		fmt.Println(tipoEdad(edad))
+	*/
+
+	n := []int8{52, 12, 78, 94, 83, 19, -77}
+	maximo, minimo := maxymin(n)
+
+	fmt.Println("Máximo:", maximo)
+	fmt.Println("Mínimo:", minimo)
 }
 
 func sumar(a, b int8) int8 {
@@ -37,4 +45,19 @@ func tipoEdad(edad uint8) string {
 	}
 
 	return tipo
+}
+
+func maxymin(numeros []int8) (max int8, min int8) {
+
+	for _, value := range numeros {
+
+		if value > max {
+			max = value
+		}
+		if value < min {
+			min = value
+		}
+	}
+
+	return
 }
